@@ -1,0 +1,52 @@
+package MyFirstJava;
+
+public class MyFirstJava {
+	
+	
+	    String replaceLast(String s,char find,char replace)
+	    {
+	        char charr[]=s.toCharArray();
+	       int l=charr.length;
+	        for(int i=l-1;i>=0;i--)
+	        {
+	            if(charr[i]==find)
+	            {
+	                charr[i]=replace;
+	                break;
+	            }
+	        }
+	        String res=new String(charr);
+	        return res;
+	    }
+		
+	    String replaceFirst(String s,char find,char replace)
+	    {
+	        char charr[]=s.toCharArray();
+	       int l=charr.length;
+	        for(int i=0;i<l;i++)
+	        {
+	            if(charr[i]==find)
+	            {
+	                charr[i]=replace;
+	                break;
+	            }
+	        }
+	        String res=new String(charr);
+	        return res;
+	    }
+		public static void main(String[] args) { 
+		    String s="Hello";
+			MyFirstJava m=new MyFirstJava();
+			String repf=m.replaceFirst(s,'l','k');
+			String repl=m.replaceLast(s,'l','k');
+			System.out.println(repf);
+			System.out.println(repl);
+		}
+	}
+  
+  
+  
+  output:
+  
+  heklo
+  helko
