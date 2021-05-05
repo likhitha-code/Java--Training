@@ -1,0 +1,146 @@
+Note: create with all getter setter cont and to string
+
+// create showroom class which has cars in it . no duplicate car can be stored
+
+ShowRoom ,  Car ->
+name
+cars
+
+// create 2 showroom  objects ..
+
+// accept showroom name from the cmd and display cars in the showroom
+
+
+
+Showroom.java
+---------------
+package com.mycollections;
+public class Showroom {
+
+	private String showname;
+	private String crname;
+	private String crclr;
+	private String city;
+
+	
+	public String getshowname() {
+	return showname;
+	}
+	public void setshowname(String name) {
+	this.showname = showname;
+	}
+	public String getcrname() {
+	return crname;
+	}
+	public void setcrname(String crname) {
+	this.crname= crname;
+	}
+	public String getcrclr() {
+	return crclr;
+	}
+	public void set(String crclr) {
+	this.crclr= crclr;
+	}
+	public String city() {
+	return city;
+	}
+	public void setRole(String city) {
+	this.city= city;
+	}
+	public Showroom(String showname, String crname, String crclr, String city) {
+	super();
+	this.showname = showname;
+	this.crname = crname;
+	this.crclr = crclr;
+	this.city = city;
+	}
+
+	public Showroom() {
+
+	}
+
+	@Override
+	public String toString() {
+	return "Showroom Info :[showname=" + showname + " crname=" + crname + ", crclr=" + crclr + ", city=" + city + "]";
+	}
+
+	}
+  
+  -----------------------------------------
+  Car.java
+  package com.mycollections;
+
+	import java.util.HashMap;
+	import java.util.HashSet;
+	import java.util.Map;
+	import java.util.Scanner;
+
+	public class Car{
+
+	public static void main(String[] args) {
+
+
+	
+	Showroom s1=new Showroom("show1", "Audi", "White", "Nellore");
+	Showroom s2=new Showroom("show2", "Bmw", "Black", "Banglore");
+	Showroom s3=new Showroom("show3", "Tata", "White", "Ongole");
+	
+
+
+	HashSet<Showroom> showroom1=new HashSet<>();
+
+	showroom1.add(s1);
+	showroom1.add(s2);
+	showroom1.add(s3);
+	
+	Showroom s4=new Showroom("show4", "Hyundai", "Red", "Hyd");
+	Showroom s5=new Showroom("show5", "Ertiga", "White", "Banglore");
+	Showroom s6=new Showroom("show6", "Tata", "Black", "Chennai");
+	
+	HashSet<Showroom> showroom2=new HashSet<>();
+
+
+	showroom2.add(s4);
+	showroom2.add(s5);
+	showroom2.add(s6);
+	
+	Showroom s7=new Showroom("show7", "Maruti Suzuki", "Blue", "Vizag");
+	Showroom s8=new Showroom("show8", "Tatanano", "Yellow", "Indore");
+	Showroom s9=new Showroom("show9", "BMW5", "Black", "Nellore");
+	
+	
+	HashSet<Showroom> showroom3=new HashSet<>();
+
+	
+	showroom3.add(s7);
+	showroom3.add(s8);
+	showroom3.add(s9);
+	
+	Map<String , HashSet<Showroom>> showname=new HashMap<String, HashSet<Showroom>>();
+
+	showname.put("s1",showroom1 );
+	showname.put("s2", showroom2);
+	showname.put("s3", showroom3);
+
+	System.out.println("Enter  showname TO See The List Of shownames");
+
+	Scanner sc=new Scanner(System.in);
+
+	String showname1=sc.nextLine();
+
+	HashSet<Showroom> showroom=showname.get(showname1);
+
+
+	for(Showroom s:showroom)
+	{
+	System.out.println(s);
+	}
+
+	}
+
+	}
+
+
+
+
+
